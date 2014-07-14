@@ -16,4 +16,12 @@
         <item>@drawable/pinkie</item>
         <item>@drawable/rainbow</item>
     </array>
+    <array name="pony_photos_big">
+        <item>@drawable/twilight_big</item>
+        <item>@drawable/applejack_big</item>
+        <item>@drawable/fluttershy_big</item>
+        <item>@drawable/rarity_big</item>
+        <item>@drawable/pinkie_big</item>
+        <item>@drawable/rainbow_big</item>
+    </array>
 </resources>

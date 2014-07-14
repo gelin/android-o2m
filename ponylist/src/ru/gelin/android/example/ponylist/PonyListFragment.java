@@ -1,11 +1,16 @@
 package ru.gelin.android.example.ponylist;
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
-public class PonyListFragment extends ListFragment {
+public class PonyListFragment extends ListFragment implements AdapterView.OnItemClickListener {
+
+    public static PonyListFragment newInstance() {
+        return new PonyListFragment();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,38 @@ public class PonyListFragment extends ListFragment {
         ListView list = getListView();
         list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         list.setMultiChoiceModeListener(new PonyMultiChoiceModeListener());
+        list.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+        onListItemClick((ListView)adapterView, position);
+    }
+
+    void onListItemClick(ListView listView, int position) {
+        if (getResources().getBoolean(R.bool.dual_pane)) {
+//            if (this.selectedItem == position) {
+//                return;
+//            }
+            listView.setItemChecked(position, true);
+            showPonyFragment(position);
+        } else {
+            startPonyIntent(position);
+        }
+//        this.selectedItem = position;
+    }
+
+    void showPonyFragment(int index) {
+        //TODO
+//        getFragmentManager().beginTransaction()
+//                .replace(R.id.details, fragment)
+//                .commit();
+    }
+
+    void startPonyIntent(int index) {
+        Intent intent = new Intent(getActivity(), PonyActivity.class);
+        //TODO pass index
+        startActivity(intent);
     }
 
     private class PonyMultiChoiceModeListener implements AbsListView.MultiChoiceModeListener {
