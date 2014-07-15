@@ -1,7 +1,9 @@
 package ru.gelin.android.example.ponylist;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -12,6 +14,7 @@ public class PonyActivity extends Activity {
 
     PonyFragment fragment;
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +26,7 @@ public class PonyActivity extends Activity {
 
     Fragment getFragment() {
         if (this.fragment == null) {
-            this.fragment = PonyFragment.newInstance(0);    //TODO get param
+            this.fragment = PonyFragment.newInstance(2);    //TODO get param
         }
         return this.fragment;
     }

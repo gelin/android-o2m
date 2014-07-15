@@ -1,11 +1,14 @@
 package ru.gelin.android.example.ponylist;
 
+import android.annotation.TargetApi;
 import android.app.ListFragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class PonyListFragment extends ListFragment implements AdapterView.OnItemClickListener {
 
     public static PonyListFragment newInstance() {
