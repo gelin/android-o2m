@@ -1,12 +1,9 @@
 package ru.gelin.android.example.ponylist;
 
-import android.app.Activity;
-import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
+import android.support.v7.app.ActionBarActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
