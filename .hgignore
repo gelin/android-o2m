@@ -3,3 +3,5 @@ out/*
 .idea/*
 ponylist/gen/*
 ponylist/local.properties
+inputs/gen/*
+inputs/local.properties
