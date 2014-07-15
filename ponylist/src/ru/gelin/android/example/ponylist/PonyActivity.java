@@ -26,7 +26,7 @@ public class PonyActivity extends Activity {
 
     Fragment getFragment() {
         if (this.fragment == null) {
-            this.fragment = PonyFragment.newInstance(5);    //TODO get param
+            this.fragment = PonyFragment.newInstance(1);    //TODO get param
         }
         return this.fragment;
     }
