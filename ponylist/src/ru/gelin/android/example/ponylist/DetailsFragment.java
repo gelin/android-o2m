@@ -3,11 +3,10 @@ package ru.gelin.android.example.ponylist;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DetailsFragment extends Fragment {
 
@@ -32,7 +31,7 @@ public class DetailsFragment extends Fragment {
         if (getArguments() != null) {
             this.itemIndex = getArguments().getInt(ARG_ITEM_INDEX);
         }
-//        setHasOptionsMenu(true);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -49,6 +48,18 @@ public class DetailsFragment extends Fragment {
         TypedArray photos = getResources().obtainTypedArray(R.array.pony_photos_big);
         ImageView photo = (ImageView)view.findViewById(R.id.photo);
         photo.setImageDrawable(photos.getDrawable(this.itemIndex));
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.contextmenu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(getActivity(), getResources().getStringArray(R.array.pony_names)[this.itemIndex] +
+                " is " + item.getTitle(), Toast.LENGTH_LONG).show();
+        return super.onOptionsItemSelected(item);
     }
 
 }
