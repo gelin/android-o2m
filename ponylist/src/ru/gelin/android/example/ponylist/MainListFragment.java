@@ -2,6 +2,7 @@ package ru.gelin.android.example.ponylist;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.*;
 import android.widget.*;
@@ -44,10 +45,10 @@ public class MainListFragment extends ListFragment implements AdapterView.OnItem
     }
 
     void showFragment(int index) {
-        //TODO
-//        getFragmentManager().beginTransaction()
-//                .replace(R.id.details, fragment)
-//                .commit();
+        Fragment fragment = DetailsFragment.newInstance(index);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.details, fragment)
+                .commit();
     }
 
     void startActivity(int index) {
