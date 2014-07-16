@@ -1,26 +1,23 @@
 package ru.gelin.android.example.ponylist;
 
-import android.annotation.TargetApi;
-import android.app.Fragment;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class PonyFragment extends Fragment {
+public class DetailsFragment extends Fragment {
 
     private static final String PREFS_PONY_INDEX = "ponyIndex";
     private static final int DEFAULT_PONY_INDEX = 0;
     private int ponyIndex = DEFAULT_PONY_INDEX;
 
-    public static PonyFragment newInstance(int ponyIndex) {
-        PonyFragment fragment;
-        fragment = new PonyFragment();
+    public static DetailsFragment newInstance(int ponyIndex) {
+        DetailsFragment fragment;
+        fragment = new DetailsFragment();
 
         Bundle args = new Bundle();
         args.putInt(PREFS_PONY_INDEX, ponyIndex);
@@ -40,7 +37,7 @@ public class PonyFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.person_big, container, false);
+        View layout = inflater.inflate(R.layout.details, container, false);
         bindView(layout);
         return layout;
     }

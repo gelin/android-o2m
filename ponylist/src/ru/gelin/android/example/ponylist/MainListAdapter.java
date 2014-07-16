@@ -12,11 +12,11 @@ import android.widget.TextView;
 /**
 * Created by gelin on 7/14/14.
 */
-class PonyListAdapter extends BaseAdapter {
+class MainListAdapter extends BaseAdapter {
 
     private final Context context;
 
-    PonyListAdapter(Context context) {
+    MainListAdapter(Context context) {
         this.context = context;
     }
 
@@ -45,7 +45,7 @@ class PonyListAdapter extends BaseAdapter {
     }
 
     View createView(ViewGroup viewGroup) {
-        return LayoutInflater.from(this.context).inflate(R.layout.person, viewGroup, false);
+        return LayoutInflater.from(this.context).inflate(R.layout.main_list_item, viewGroup, false);
     }
 
     void bindView(View view, int i) {

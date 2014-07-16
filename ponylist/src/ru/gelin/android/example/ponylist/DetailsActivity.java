@@ -1,32 +1,32 @@
 package ru.gelin.android.example.ponylist;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 
 /**
  *  Activity to setup domains where to remove query.
  */
-public class PonyActivity extends Activity {
+public class DetailsActivity extends ActionBarActivity {
 
-    PonyFragment fragment;
+    DetailsFragment fragment;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getFragmentManager().beginTransaction()
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, getFragment())
                 .commit();
     }
 
     Fragment getFragment() {
         if (this.fragment == null) {
-            this.fragment = PonyFragment.newInstance(1);    //TODO get param
+            this.fragment = DetailsFragment.newInstance(1);    //TODO get param
         }
         return this.fragment;
     }
