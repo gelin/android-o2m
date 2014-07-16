@@ -11,16 +11,16 @@ import android.widget.TextView;
 
 public class DetailsFragment extends Fragment {
 
-    private static final String PREFS_PONY_INDEX = "ponyIndex";
-    private static final int DEFAULT_PONY_INDEX = 0;
-    private int ponyIndex = DEFAULT_PONY_INDEX;
+    private static final String ARG_ITEM_INDEX = "itemIndex";
+    private static final int DEFAULT_ITEM_INDEX = 0;
+    private int itemIndex = DEFAULT_ITEM_INDEX;
 
     public static DetailsFragment newInstance(int ponyIndex) {
         DetailsFragment fragment;
         fragment = new DetailsFragment();
 
         Bundle args = new Bundle();
-        args.putInt(PREFS_PONY_INDEX, ponyIndex);
+        args.putInt(ARG_ITEM_INDEX, ponyIndex);
         fragment.setArguments(args);
 
         return fragment;
@@ -30,7 +30,7 @@ public class DetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            this.ponyIndex = getArguments().getInt(PREFS_PONY_INDEX);
+            this.itemIndex = getArguments().getInt(ARG_ITEM_INDEX);
         }
 //        setHasOptionsMenu(true);
     }
@@ -45,10 +45,10 @@ public class DetailsFragment extends Fragment {
     void bindView(View view) {
         String[] names = getResources().getStringArray(R.array.pony_names);
         TextView name = (TextView)view.findViewById(R.id.name);
-        name.setText(names[this.ponyIndex]);
+        name.setText(names[this.itemIndex]);
         TypedArray photos = getResources().obtainTypedArray(R.array.pony_photos_big);
         ImageView photo = (ImageView)view.findViewById(R.id.photo);
-        photo.setImageDrawable(photos.getDrawable(this.ponyIndex));
+        photo.setImageDrawable(photos.getDrawable(this.itemIndex));
     }
 
 }

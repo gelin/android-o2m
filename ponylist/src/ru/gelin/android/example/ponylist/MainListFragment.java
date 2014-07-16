@@ -52,7 +52,7 @@ public class MainListFragment extends ListFragment implements AdapterView.OnItem
 
     void startActivity(int index) {
         Intent intent = new Intent(getActivity(), DetailsActivity.class);
-        //TODO pass index
+        intent.putExtra(DetailsActivity.EXTRA_ITEM_INDEX, index);
         startActivity(intent);
     }
 
