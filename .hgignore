@@ -5,3 +5,5 @@ ponylist/gen/*
 ponylist/local.properties
 inputs/gen/*
 inputs/local.properties
+notification/gen/*
+notification/local.properties
