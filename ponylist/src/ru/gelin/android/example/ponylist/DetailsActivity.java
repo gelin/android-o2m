@@ -1,17 +1,16 @@
 package ru.gelin.android.example.ponylist;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 
 /**
  *  Activity to setup domains where to remove query.
  */
-public class DetailsActivity extends ActionBarActivity {
+public class DetailsActivity extends Activity {
 
     public static final String EXTRA_ITEM_INDEX = "itemIndex";
     static final int DEFAULT_ITEM_INDEX = 0;
@@ -22,10 +21,10 @@ public class DetailsActivity extends ActionBarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         int index = getIntent().getIntExtra(EXTRA_ITEM_INDEX, DEFAULT_ITEM_INDEX);
-        getSupportFragmentManager().beginTransaction()
+        getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, getFragment(index))
                 .commit();
     }
@@ -41,7 +40,7 @@ public class DetailsActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+//                NavUtils.navigateUpFromSameTask(this);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

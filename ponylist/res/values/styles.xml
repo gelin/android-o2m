@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light">
     </style>
 
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="Dialog" parent="@android:style/Theme.Dialog">
+    <style name="Dialog" parent="@android:style/Theme.Holo.Dialog">
     </style>
 
-    <style name="activated" parent="@style/Theme.AppCompat.Light">
-        <item name="android:background">@android:drawable/list_selector_background</item>
+    <style name="activated" parent="@android:style/Theme.Holo.Light">
+        <!--<item name="android:background">@android:drawable/list_selector_background</item>-->
     </style>
 
 </resources>

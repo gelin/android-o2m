@@ -1,8 +1,8 @@
 package ru.gelin.android.example.ponylist;
 
+import android.app.Fragment;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.*;
 import android.widget.ImageView;
 import android.widget.TextView;
